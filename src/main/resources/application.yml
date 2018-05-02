@@ -1,0 +1,15 @@
+server:
+  port: 8100                   # 指定该tomcat端口
+
+
+#Spring 配置文件
+spring:
+  freemarker:
+    prefer-file-system-access: false
+  application:
+    name: provider
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
